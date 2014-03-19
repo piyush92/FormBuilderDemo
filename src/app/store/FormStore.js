@@ -12,47 +12,47 @@ Ext.define('DemoApp.store.FormStore', {
         data:[
         {
             Name:'Fitness',
-            encounter:'inpatient',
+            encounter:'inPatient',
             fields: [
             {
                 uuid:'ksdmksmd',
-                field: 'weigth',
+                field: 'Weigth',
                 datatype: 'numeric',
                 datatypeunit: 'Kgs'
             }, {
                 uuid:'kdmdkfdk',
-                field: 'height',
+                field: 'Height',
                 datatype: 'numeric',
                 datatypeunit:'meter'
             }, {
                 uuid:'idpwksk',
-                field:'is fat',
+                field:'Is fat',
                 datatype:'boolean',
                 datatypeunit:null
             }
             ]
         }, {
             Name: 'Sysmtoms',
-            encounter: 'outpatient',
+            encounter: 'outPatient',
             fields: [
             {
                 uuid:'ksdjdjs',
-                field:'patient name',
+                field:'Patient Name',
                 datatype: 'text',
                 datatypeunit:null
             }, {
                 uuid:'kdkowkss',
-                field:'dehydration',
+                field:'Dehydration',
                 datatype: 'boolean',
                 datatypeunit:null
             }, {
                 uuid: 'kdkskdl',
-                field: 'cold',
+                field: 'Cold',
                 datatype: 'boolean',
                 datatypeunit:null
             }, {
                 uuid: 'koqodd',
-                field: 'other symtoms',
+                field: 'Other symtoms',
                 datatype:'textarea',
                 datatypeunit:null
             }, {

@@ -10,11 +10,15 @@ Ext.define('DemoApp.controller.controller', {
         
         refs: {
             formlist: '#formlist',
+            addeditFormTitle: '#addeditFormTitle',
             addForm: '#addForm',
             backToList: '#backToList',
             formFields: '#formFields',
             previewFormTitleBar : '#previewFormTitleBar',
-            fieldContainer: '#fieldContainer'
+            fieldContainer: '#fieldContainer',
+            formName: '#formName',
+            encounterField: '#encounterField',
+            addeditFormTitle : '#addeditFormTitle'
         },
         
         control: {
@@ -74,18 +78,34 @@ Ext.define('DemoApp.controller.controller', {
                 label: f.field,
                 options: f.codedOptions
             });
-        } 
+        }
+        component.setBorder('0 1 1 1');
+        component.setStyle("border-style: solid;")
         return component;
     },
 
     addForm: function() {
         Ext.getCmp('mainView').setActiveItem(1);
         Ext.getCmp('formFields').setStore(null);
+        
+        Ext.getCmp('formName').setValue("");
+        Ext.getCmp('addeditFormTitle').setTitle('Add New Form');
     },
     editForm: function(record) {
         //  console.log('tapped button');
         //   console.log(record);
-        this.addForm();
+        Ext.getCmp('mainView').setActiveItem(1);
+        Ext.getCmp('formFields').setStore(null);
+        Ext.getCmp('addeditFormTitle').setTitle('Edit Form')
+     
+        var i=0;
+        Ext.getCmp('formName').setValue(record.Name);
+        var encounters = Ext.getCmp('encounterField').getOptions();
+       console.log(encounters);
+        while(i<encounters.length && record.encounter != encounters[i].value) {
+            i = i+1;
+        }
+        Ext.getCmp('encounterField').setValue(Ext.getCmp('encounterField').getStore().getAt(i));
         var fieldList = Ext.getCmp('formFields');
         fieldList.setStore(new Ext.data.Store({
             requires: 'DemoApp.model.FormField',

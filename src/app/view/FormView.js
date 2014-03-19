@@ -13,6 +13,7 @@ Ext.define('DemoApp.view.FormView', {
             
             height: 44,
             docked: 'top',
+            id: 'addeditFormTitle',
             title: 'Add New From',
             items: [
             {
@@ -32,17 +33,22 @@ Ext.define('DemoApp.view.FormView', {
             },
             items: [{
                 xtype: 'textfield',
-                label: 'Form Name'
+                label: 'Form Name',
+                id:'formName',
+                border: '0 0 1 0',
+                style: ' border-style: solid;'
+                    
             },
             {
                 xtype: 'selectfield',
                 label: 'Encounter type',
+                id:'encounterField',
                 options: [{
                         text: 'In Patient',
                         value: 'inPatient'
                     }, {
                         text: 'Out Patient',
-                        value: 'outPatien'
+                        value: 'outPatient'
                     }, {
                         text: 'Pharmacy',
                         value: 'pharmacy'
@@ -60,7 +66,7 @@ Ext.define('DemoApp.view.FormView', {
                         type: 'fit'
                     },
                     itemTpl: [
-                    '<div>{field}&emsp; Datatype: {datatype}&emsp;'
+                    '<div>{field}&emsp; ({datatype})'
                     ],
                 },
                 {
