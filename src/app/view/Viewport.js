@@ -7,7 +7,6 @@ Ext.define('DemoApp.view.Viewport', {
             type: 'vbox'
         },
         fillscreen:true,
-        style: 'background-color:#CCCCFF',
         items: [
         {
            xtype: 'titlebar',
