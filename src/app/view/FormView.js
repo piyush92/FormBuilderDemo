@@ -71,6 +71,7 @@ Ext.define('DemoApp.view.FormView', {
                 },
                 {
                     xtype: 'button',
+                    id: 'addFieldButton',
                     text: 'add field'
                 }
                 ]
@@ -80,7 +81,8 @@ Ext.define('DemoApp.view.FormView', {
         {
             xtype: 'button',
             ui: 'confirm',
-            text: 'Save'
+            text: 'Save',
+            id: 'saveForm'
         }
         ]
     }
